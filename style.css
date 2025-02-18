@@ -80,7 +80,7 @@ nav ul li a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -90,7 +90,7 @@ nav ul li a {
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 1rem;
-    width: 250px;
+    width: calc(33.333% - 1rem); /* 3 produtos por linha com espaçamento */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -106,8 +106,8 @@ nav ul li a {
 }
 
 .produto img {
-    width: 80px; /* Tamanho reduzido para parecer um ícone */
-    height: 80px;
+    width: 100%;
+    height: 120px;
     object-fit: contain;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -186,11 +186,7 @@ footer p {
     }
 
     .produto {
-        width: 45%;
-    }
-
-    .produtos-container {
-        justify-content: center;
+        width: calc(50% - 1rem); /* 2 produtos por linha em tablets */
     }
 }
 
@@ -217,44 +213,29 @@ footer p {
         font-size: 0.9rem;
     }
 
-    .produtos-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
     .produto {
-        width: 100%; /* Ocupa toda a largura da tela */
-        flex-direction: row; /* Alinha os itens em linha */
-        align-items: center;
+        width: calc(33.333% - 1rem); /* 3 produtos por linha em celulares */
         padding: 0.75rem;
     }
 
     .produto img {
-        width: 50px; /* Tamanho reduzido para ícones */
-        height: 50px;
-        margin-bottom: 0;
-        margin-right: 1rem;
+        height: 80px; /* Reduz o tamanho da imagem para celulares */
     }
 
     .produto h3 {
         font-size: 0.9rem;
-        margin: 0;
     }
 
     .produto p {
-        display: none; /* Oculta a descrição em dispositivos móveis */
+        font-size: 0.8rem;
     }
 
     .produto .preco {
         font-size: 0.9rem;
-        margin: 0;
     }
 
     .produto button {
         padding: 0.5rem;
         font-size: 0.8rem;
-        width: auto;
-        margin-top: 0;
     }
 }
