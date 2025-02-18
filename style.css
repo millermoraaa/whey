@@ -20,10 +20,9 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header .logo img {
-    width: 150px;
-    max-width: 100%;
-    height: auto;
+header .logo h1 {
+    font-size: 2rem;
+    margin: 0;
 }
 
 nav ul {
@@ -200,6 +199,87 @@ nav ul li a:hover {
     background-color: #e65c00;
 }
 
+/* Estilos para o formulário de contato */
+.formulario-contato {
+    background-color: #fff;
+    padding: 1rem; /* Padding menor */
+    margin: 2rem auto;
+    border-radius: 8px; /* Bordas menos arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 350px; /* Largura máxima reduzida */
+    border: 1px solid #e0e0e0;
+}
+
+.formulario-contato h3 {
+    font-size: 1.25rem; /* Título menor */
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600; /* Peso da fonte mais leve */
+}
+
+.formulario-contato label {
+    display: block;
+    margin-bottom: 0.5rem; /* Espaçamento menor */
+    font-weight: 600;
+    color: #444;
+    font-size: 0.9rem; /* Fonte menor */
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+    width: 100%;
+    padding: 0.5rem; /* Padding menor */
+    margin-bottom: 1rem; /* Espaçamento menor */
+    border: 1px solid #e0e0e0;
+    border-radius: 6px; /* Bordas menos arredondadas */
+    font-size: 0.9rem; /* Fonte menor */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.formulario-contato input::placeholder,
+.formulario-contato textarea::placeholder {
+    color: #999;
+    font-size: 0.9rem; /* Fonte menor para placeholders */
+}
+
+.formulario-contato input:focus,
+.formulario-contato textarea:focus {
+    border-color: #333; /* Cor de foco preta */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra de foco preta */
+    background-color: #fff;
+}
+
+.formulario-contato textarea {
+    resize: vertical;
+    min-height: 100px; /* Altura menor */
+}
+
+.formulario-contato button {
+    background-color: #333; /* Botão preto */
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem; /* Padding menor */
+    border-radius: 6px; /* Bordas menos arredondadas */
+    font-size: 0.9rem; /* Fonte menor */
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+}
+
+.formulario-contato button:hover {
+    background-color: #000; /* Cor mais escura ao passar o mouse */
+    transform: translateY(-2px);
+}
+
+.formulario-contato button:active {
+    transform: translateY(0);
+}
+
 footer {
     background-color: #333;
     color: #fff;
@@ -221,12 +301,16 @@ footer p {
     .produto {
         width: calc(50% - 1.5rem); /* 2 produtos por linha em tablets */
     }
+
+    .formulario-contato {
+        padding: 1rem;
+    }
 }
 
 /* Para celulares */
 @media (max-width: 480px) {
-    header .logo img {
-        width: 120px;
+    header .logo h1 {
+        font-size: 1.5rem;
     }
 
     nav ul {
@@ -272,5 +356,24 @@ footer p {
     .produto button {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
+    }
+
+    .formulario-contato {
+        padding: 1rem;
+    }
+
+    .formulario-contato h3 {
+        font-size: 1.1rem;
+    }
+
+    .formulario-contato input,
+    .formulario-contato textarea {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .formulario-contato button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 }
