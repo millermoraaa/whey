@@ -12,6 +12,7 @@ body {
     color: #333;
 }
 
+/* Header */
 header {
     background-color: #333;
     color: #fff;
@@ -23,6 +24,8 @@ header {
 header .logo h1 {
     font-size: 2rem;
     margin: 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 nav ul {
@@ -43,17 +46,19 @@ nav ul li a {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 nav ul li a:hover {
     color: #ff6600;
+    transform: translateY(-2px);
 }
 
+/* Hero Section */
 .hero {
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
     color: #fff;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -66,22 +71,26 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     position: relative;
     z-index: 2;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin: 1rem 0;
     position: relative;
     z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .hero .btn {
@@ -92,18 +101,20 @@ nav ul li a:hover {
     border-radius: 5px;
     font-size: 1rem;
     display: inline-block;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     position: relative;
     z-index: 2;
 }
 
 .hero .btn:hover {
     background-color: #e65c00;
+    transform: translateY(-2px);
 }
 
+/* Produtos */
 .produtos-destaque, .todos-produtos {
-    padding: 2rem;
+    padding: 3rem 2rem;
     text-align: center;
     background-color: #fff;
     margin: 2rem auto;
@@ -133,7 +144,7 @@ nav ul li a:hover {
     justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    aspect-ratio: 1 / 1; /* Torna as caixas quadradas */
+    aspect-ratio: 1 / 1;
 }
 
 .produto:hover {
@@ -143,7 +154,7 @@ nav ul li a:hover {
 
 .produto img {
     width: 100%;
-    max-width: 150px; /* Limita o tamanho máximo da imagem */
+    max-width: 150px;
     height: auto;
     object-fit: contain;
     border-radius: 5px;
@@ -153,7 +164,7 @@ nav ul li a:hover {
 }
 
 .produto:hover img {
-    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
+    transform: scale(1.05);
 }
 
 .produto h3 {
@@ -192,79 +203,74 @@ nav ul li a:hover {
     width: 100%;
     font-size: 0.9rem;
     margin-top: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .produto button:hover {
     background-color: #e65c00;
+    transform: translateY(-2px);
 }
 
-/* Estilos para o formulário de contato */
+/* Formulário de Contato */
 .formulario-contato {
     background-color: #fff;
-    padding: 1rem; /* Padding menor */
+    padding: 2rem;
     margin: 2rem auto;
-    border-radius: 8px; /* Bordas menos arredondadas */
+    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 350px; /* Largura máxima reduzida */
+    max-width: 400px;
     border: 1px solid #e0e0e0;
 }
 
 .formulario-contato h3 {
-    font-size: 1.25rem; /* Título menor */
+    font-size: 1.5rem;
     color: #333;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
-    font-weight: 600; /* Peso da fonte mais leve */
+    font-weight: 700;
 }
 
 .formulario-contato label {
     display: block;
-    margin-bottom: 0.5rem; /* Espaçamento menor */
+    margin-bottom: 0.5rem;
     font-weight: 600;
     color: #444;
-    font-size: 0.9rem; /* Fonte menor */
+    font-size: 0.9rem;
 }
 
 .formulario-contato input,
 .formulario-contato textarea {
     width: 100%;
-    padding: 0.5rem; /* Padding menor */
-    margin-bottom: 1rem; /* Espaçamento menor */
+    padding: 0.75rem;
+    margin-bottom: 1rem;
     border: 1px solid #e0e0e0;
-    border-radius: 6px; /* Bordas menos arredondadas */
-    font-size: 0.9rem; /* Fonte menor */
+    border-radius: 6px;
+    font-size: 0.9rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     background-color: #f9f9f9;
     color: #333;
 }
 
-.formulario-contato input::placeholder,
-.formulario-contato textarea::placeholder {
-    color: #999;
-    font-size: 0.9rem; /* Fonte menor para placeholders */
-}
-
 .formulario-contato input:focus,
 .formulario-contato textarea:focus {
-    border-color: #333; /* Cor de foco preta */
+    border-color: #ff6600;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra de foco preta */
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
     background-color: #fff;
 }
 
 .formulario-contato textarea {
     resize: vertical;
-    min-height: 100px; /* Altura menor */
+    min-height: 120px;
 }
 
 .formulario-contato button {
-    background-color: #333; /* Botão preto */
+    background-color: #333;
     color: #fff;
     border: none;
-    padding: 0.75rem 1.5rem; /* Padding menor */
-    border-radius: 6px; /* Bordas menos arredondadas */
-    font-size: 0.9rem; /* Fonte menor */
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
     cursor: pointer;
     width: 100%;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -272,19 +278,16 @@ nav ul li a:hover {
 }
 
 .formulario-contato button:hover {
-    background-color: #000; /* Cor mais escura ao passar o mouse */
+    background-color: #000;
     transform: translateY(-2px);
 }
 
-.formulario-contato button:active {
-    transform: translateY(0);
-}
-
+/* Footer */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     margin-top: 3rem;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -295,32 +298,15 @@ footer p {
 }
 
 /* Media Queries para Responsividade */
-
-/* Para tablets */
 @media (max-width: 768px) {
     .produto {
-        width: calc(50% - 1.5rem); /* 2 produtos por linha em tablets */
-    }
-
-    .formulario-contato {
-        padding: 1rem;
+        width: calc(50% - 1.5rem);
     }
 }
 
-/* Para celulares */
 @media (max-width: 480px) {
     header .logo h1 {
         font-size: 1.5rem;
-    }
-
-    nav ul {
-        flex-direction: row; /* Menu na horizontal */
-        justify-content: center;
-        gap: 1rem; /* Espaçamento entre os itens */
-    }
-
-    nav ul li {
-        margin: 0;
     }
 
     .hero h1 {
@@ -332,13 +318,12 @@ footer p {
     }
 
     .produto {
-        width: calc(50% - 1rem); /* 2 produtos por linha em celulares */
+        width: calc(50% - 1rem);
         padding: 1rem;
-        aspect-ratio: 1 / 1; /* Mantém as caixas quadradas */
     }
 
     .produto img {
-        max-width: 120px; /* Ajuste para telas pequenas */
+        max-width: 120px;
     }
 
     .produto h3 {
