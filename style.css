@@ -242,7 +242,7 @@ footer p {
     }
 
     .produto {
-        width: calc(33.333% - 1rem); /* 3 produtos por linha em celulares */
+        width: calc(50% - 1rem); /* 2 produtos por linha em celulares */
         padding: 1rem;
         aspect-ratio: 1 / 1; /* Mantém as caixas quadradas */
     }
