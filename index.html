@@ -33,13 +33,13 @@
                 <img src="shopping (5).webp" alt="Whey Protein">
                 <h3>Kit: Whey Pro + 2X Mass + Bcaa + Creatine + Coqueteleira</h3>
                 <p>R$ 239,90</p>
-                <button onclick="window.location.href='pagamento.html'">Comprar</button>
+                <button onclick="adicionarAoCarrinho('Kit: Whey Pro + 2X Mass + Bcaa + Creatine + Coqueteleira', 'shopping (5).webp', 239.90)">Comprar</button>
             </div>
             <div class="produto">
                 <img src="shopping (6).webp" alt="Creatina">
                 <h3>Kit Whey Pro + Bcaa + Creatina + Hipercalorico Max Titanium</h3>
                 <p>R$ 169,90</p>
-                <button onclick="window.location.href='pagamento.html'">Comprar</button>
+                <button onclick="adicionarAoCarrinho('Kit Whey Pro + Bcaa + Creatina + Hipercalorico Max Titanium', 'shopping (6).webp', 169.90)">Comprar</button>
             </div>
         </div>
     </section>
@@ -63,5 +63,20 @@
         <p>&copy; 2023 WheyPro. Todos os direitos reservados.</p>
         <p>Contato: wheypro@gmail.com</p>
     </footer>
+
+    <script>
+        function adicionarAoCarrinho(nomeProduto, imagemProduto, precoProduto) {
+            // Salva os detalhes do produto no localStorage
+            const produto = {
+                nome: nomeProduto,
+                imagem: imagemProduto,
+                preco: precoProduto
+            };
+            localStorage.setItem('produtoSelecionado', JSON.stringify(produto));
+
+            // Redireciona para a página do carrinho
+            window.location.href = 'carrinho.html';
+        }
+    </script>
 </body>
 </html>
