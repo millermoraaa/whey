@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - WheyPro</title>
+    <link rel="stylesheet" href="carrinho.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>WheyPro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="carrinho">
+            <h2>Seu Carrinho de Compras</h2>
+            <div id="detalhesCarrinho">
+                <!-- Detalhes do produto serão exibidos aqui -->
+            </div>
+            <div id="resumoCarrinho">
+                <!-- Resumo do pedido será exibido aqui -->
+            </div>
+            <div>
+                <button onclick="finalizarCompra()">Finalizar Compra</button>
+                <button onclick="continuarComprando()">Continuar Comprando</button>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <p>&copy; 2023 WheyPro. Todos os direitos reservados.</p>
+        <p>Contato: wheypro@gmail.com</p>
+    </footer>
+
+    <script>
+        // Função para carregar os detalhes do produto no carrinho
+        window.onload = function () {
+            const produto = JSON.parse(localStorage.getItem('produtoSelecionado'));
+            const carrinhoDiv = document.getElementById('detalhesCarrinho');
+            const resumoDiv = document.getElementById('resumoCarrinho');
+
+            if (produto) {
+                carrinhoDiv.innerHTML = `
+                    <h3>Produto Selecionado</h3>
+                    <img src="${produto.imagem}" alt="${produto.nome}" class="imagem-carrinho">
+                    <p><strong>Nome:</strong> ${produto.nome}</p>
+                    <p><strong>Preço:</strong> R$ ${produto.preco.toFixed(2)}</p>
+                `;
+
+                resumoDiv.innerHTML = `
+                    <h3>Resumo do Pedido</h3>
+                    <p><strong>Total:</strong> R$ ${produto.preco.toFixed(2)}</p>
+                `;
+            } else {
+                carrinhoDiv.innerHTML = `<p>Nenhum produto selecionado.</p>`;
+                resumoDiv.innerHTML = ``;
+            }
+        };
+
+        // Função para finalizar a compra
+        function finalizarCompra() {
+            alert('Redirecionando para o pagamento...');
+            window.location.href = 'pagamento.html';
+        }
+
+        // Função para continuar comprando
+        function continuarComprando() {
+            window.location.href = 'produtos.html';
+        }
+    </script>
+</body>
+</html>
