@@ -313,3 +313,29 @@ footer a:hover {
         font-size: 10px;
     }
 }
+/* Estilo para a imagem do carrinho no cabeçalho */
+header nav ul img {
+    width: auto; /* Mantém a proporção da imagem */
+    height: 40px; /* Define a altura da imagem */
+    vertical-align: middle; /* Alinha a imagem verticalmente com o texto */
+    margin-right: 10px; /* Adiciona um espaçamento à direita da imagem */
+}
+
+/* Estilo para as imagens dos produtos no carrinho */
+#carrinho td img {
+    width: auto; /* Mantém a proporção da imagem */
+    height: 50px; /* Define a altura da imagem */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    margin-right: 10px; /* Adiciona um espaçamento à direita da imagem */
+}
+
+/* Estilo responsivo para telas menores */
+@media (max-width: 768px) {
+    header nav ul img {
+        height: 30px; /* Reduz a altura da imagem em telas menores */
+    }
+
+    #carrinho td img {
+        height: 40px; /* Reduz a altura da imagem em telas menores */
+    }
+}
