@@ -20,7 +20,6 @@ header {
     padding: 15px 10px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative; /* Adicionado para posicionar a logo corretamente */
 }
 
 header .logo h1 {
@@ -43,7 +42,7 @@ nav {
 }
 
 nav::before {
-    content: "WheyPro";
+    content: "";
     position: absolute;
     top: -25px;
     left: 50%;
@@ -51,7 +50,6 @@ nav::before {
     font-size: 20px;
     font-weight: bold;
     color: #fff;
-    display: none; /* Oculta o texto "WheyPro" em telas pequenas */
 }
 
 nav ul {
@@ -87,7 +85,7 @@ h1 {
     text-align: center;
     margin: 20px 0;
     font-size: 22px;
-    color: #333;
+    color: #fff;
 }
 
 /* Carrinho */
@@ -252,11 +250,11 @@ footer a:hover {
 @media (max-width: 480px) {
     header .logo h1 {
         font-size: 20px;
-        margin-bottom: 5px; /* Reduz o espaçamento abaixo da logo */
     }
 
     nav::before {
-        display: none; /* Oculta o texto "WheyPro" em telas pequenas */
+        font-size: 18px;
+        top: -20px;
     }
 
     nav ul {
