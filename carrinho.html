@@ -14,28 +14,34 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="#produtos">Produtos</a></li>
                 <li><a href="#contato">Contato</a></li>
                 <li><a href="carrinho.html">Carrinho</a></li>
             </ul>
         </nav>
+        <h1>Carrinho de Compras</h1>
     </header>
+    
+    <section id="carrinho">
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Total</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-carrinho"></tbody>
+        </table>
 
-    <main>
-        <section id="carrinho">
-            <h2>Seu Carrinho de Compras</h2>
-            <div id="detalhesCarrinho">
-                <!-- Detalhes do produto serão exibidos aqui -->
-            </div>
-            <div id="resumoCarrinho">
-                <!-- Resumo do pedido será exibido aqui -->
-            </div>
-            <div>
-                <button onclick="finalizarCompra()">Finalizar Compra</button>
-                <button onclick="continuarComprando()">Continuar Comprando</button>
-            </div>
-        </section>
-    </main>
+        <div id="total-carrinho">
+            <p>Total: R$ <span id="total-valor">0,00</span></p>
+            <button onclick="finalizarCompra()">Finalizar Compra</button>
+            <button onclick="continuarComprando()">Continuar Comprando</button>
+        </div>
+    </section>
 
     <footer id="contato">
         <p>&copy; 2023 WheyPro. Todos os direitos reservados.</p>
@@ -43,40 +49,71 @@
     </footer>
 
     <script>
-        // Função para carregar os detalhes do produto no carrinho
-        window.onload = function () {
-            const produto = JSON.parse(localStorage.getItem('produtoSelecionado'));
-            const carrinhoDiv = document.getElementById('detalhesCarrinho');
-            const resumoDiv = document.getElementById('resumoCarrinho');
+        // Carregar carrinho
+        function carregarCarrinho() {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            let tabelaCarrinho = document.getElementById('tabela-carrinho');
+            let total = 0;
 
-            if (produto) {
-                carrinhoDiv.innerHTML = `
-                    <h3>Produto Selecionado</h3>
-                    <img src="${produto.imagem}" alt="${produto.nome}" class="imagem-carrinho">
-                    <p><strong>Nome:</strong> ${produto.nome}</p>
-                    <p><strong>Preço:</strong> R$ ${produto.preco.toFixed(2)}</p>
+            // Limpar conteúdo anterior
+            tabelaCarrinho.innerHTML = '';
+
+            // Preencher a tabela com os itens do carrinho
+            carrinho.forEach((produto, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><img src="${produto.imagem}" alt="${produto.nome}" style="width: 50px;"> ${produto.nome}</td>
+                    <td>R$ ${produto.preco.toFixed(2)}</td>
+                    <td>
+                        <button onclick="alterarQuantidade(${index}, -1)">-</button>
+                        <span>${produto.quantidade}</span>
+                        <button onclick="alterarQuantidade(${index}, 1)">+</button>
+                    </td>
+                    <td>R$ ${(produto.preco * produto.quantidade).toFixed(2)}</td>
+                    <td><button onclick="removerDoCarrinho(${index})">Excluir</button></td>
                 `;
+                tabelaCarrinho.appendChild(tr);
 
-                resumoDiv.innerHTML = `
-                    <h3>Resumo do Pedido</h3>
-                    <p><strong>Total:</strong> R$ ${produto.preco.toFixed(2)}</p>
-                `;
-            } else {
-                carrinhoDiv.innerHTML = `<p>Nenhum produto selecionado.</p>`;
-                resumoDiv.innerHTML = ``;
-            }
-        };
+                // Calcular o total
+                total += produto.preco * produto.quantidade;
+            });
 
-        // Função para finalizar a compra
+            // Atualizar total
+            document.getElementById('total-valor').textContent = total.toFixed(2);
+        }
+
+        // Alterar a quantidade de um item no carrinho
+        function alterarQuantidade(index, delta) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const produto = carrinho[index];
+            
+            produto.quantidade += delta;
+            if (produto.quantidade < 1) produto.quantidade = 1; // Evitar quantidade negativa
+            
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            carregarCarrinho(); // Atualizar carrinho
+        }
+
+        // Remover um item do carrinho
+        function removerDoCarrinho(index) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            carrinho.splice(index, 1); // Remove o item do carrinho
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            carregarCarrinho(); // Atualizar carrinho após remoção
+        }
+
+        // Finalizar compra - redireciona para pagamento.html
         function finalizarCompra() {
-            alert('Redirecionando para o pagamento...');
             window.location.href = 'pagamento.html';
         }
 
-        // Função para continuar comprando
+        // Continuar comprando - redireciona para produtos.html
         function continuarComprando() {
             window.location.href = 'produtos.html';
         }
+
+        // Carregar carrinho ao carregar a página
+        window.onload = carregarCarrinho;
     </script>
 </body>
 </html>
