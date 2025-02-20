@@ -80,7 +80,7 @@ h1 {
     text-align: center;
     margin: 20px 0;
     font-size: 28px;
-    color: #222;
+    color: #fff;
 }
 
 /* Carrinho */
@@ -117,6 +117,20 @@ td img {
     height: auto;
     margin-right: 10px;
     border-radius: 5px;
+    display: block;
+}
+
+.td-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.td-produto p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
 }
 
 .quantity {
@@ -127,23 +141,45 @@ td img {
 }
 
 .quantity button {
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #ff6600 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 14px 20px !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: background 0.3s !important;
+}
+
+.quantity button:hover {
+    background-color: #e55b00 !important;
 }
 
 .quantity input {
-    width: 40px;
+    width: 60px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 18px;
+}
+
+/* Botão Excluir */
+.btn-excluir {
+    background-color: #ff6600 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 14px 20px !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: background 0.3s !important;
+}
+
+.btn-excluir:hover {
+    background-color: #e55b00 !important;
 }
 
 /* Container do Total */
@@ -162,83 +198,46 @@ td img {
 }
 
 #total-carrinho button {
-    background-color: #ff6600;
-    color: #fff;
-    padding: 14px 24px;
-    font-size: 18px;
-    width: auto;
+    background-color: #ff6600 !important;
+    color: #fff !important;
+    padding: 14px 24px !important;
+    font-size: 18px !important;
+    width: auto !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    transition: background 0.3s !important;
 }
 
-/* Responsividade Melhorada */
-@media (max-width: 768px) {
-    nav ul {
-        flex-wrap: nowrap;
-        justify-content: center;
-    }
-    
-    #carrinho {
-        padding: 15px;
-    }
-
-    table {
-        font-size: 14px;
-    }
-
-    th, td {
-        padding: 10px;
-    }
-
-    #total-carrinho {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    #total-carrinho button {
-        width: 100%;
-        margin-top: 10px;
-    }
+#total-carrinho button:hover {
+    background-color: #e55b00 !important;
 }
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 22px;
-    }
-
-    nav ul {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    table {
-        font-size: 12px;
-    }
-
-    th, td {
-        padding: 8px;
-    }
-
-    #total-carrinho p {
-        font-size: 16px;
-    }
-
-    #total-carrinho button {
-        padding: 12px;
-        font-size: 14px;
-    }
-}
-
-/* Rodapé Melhorado */
+/* Estilo do rodapé */
 footer {
     background-color: #222;
     color: #fff;
-    padding: 10px 0;
     text-align: center;
-    font-size: 12px;
-    margin-top: 15px;
+    padding: 20px 0;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p {
     margin: 0;
+    font-weight: 300;
 }
+
+footer a {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #e55b00;
+}
+
+
 
