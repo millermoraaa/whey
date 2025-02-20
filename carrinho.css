@@ -171,7 +171,7 @@ td img {
     color: #fff !important;
     border: none !important;
     padding: 14px 20px !important;
-    font-size: 20px !important;
+    font-size: 16px !important;
     font-weight: bold !important;
     border-radius: 5px !important;
     cursor: pointer !important;
@@ -289,6 +289,17 @@ footer a:hover {
         width: 100%;
         margin-top: 10px;
     }
+
+    /* Ajustes na navegação */
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -318,4 +329,3 @@ footer a:hover {
         font-size: 12px;
     }
 }
-
