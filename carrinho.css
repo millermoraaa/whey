@@ -211,6 +211,7 @@ td img {
 #total-carrinho button:hover {
     background-color: #e55b00 !important;
 }
+
 /* Estilo do rodapé */
 footer {
     background-color: #222;
@@ -239,5 +240,82 @@ footer a:hover {
     color: #e55b00;
 }
 
+/* Estilo Responsivo para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Ajustes na disposição do carrinho */
+    #carrinho {
+        padding: 10px;
+    }
 
+    table {
+        font-size: 14px;
+    }
+
+    .quantity button,
+    .btn-excluir,
+    #total-carrinho button {
+        padding: 10px 16px;
+        font-size: 16px;
+    }
+
+    #total-carrinho {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #total-carrinho button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Ajustes na exibição da tabela */
+    .td-produto {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .td-produto p {
+        margin-top: 0;
+    }
+
+    /* Ajuste nos botões de "Excluir" e "Continuar Comprando" */
+    .quantity {
+        flex-direction: column;
+    }
+
+    .quantity button,
+    .btn-excluir {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para telas menores */
+    h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .quantity input {
+        width: 50px;
+    }
+
+    .td-produto {
+        text-align: center;
+    }
+
+    .td-produto p {
+        font-size: 12px;
+    }
+}
 
