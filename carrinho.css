@@ -13,25 +13,24 @@ body {
     padding: 0;
 }
 
+/* Header */
 header {
     background-color: #222;
     color: #fff;
-    padding: 15px 20px;
+    padding: 15px 10px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 header .logo h1 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 10px;
     color: #fff;
 }
 
+/* Navegação */
 nav {
     background: #333;
     padding: 10px 0;
@@ -47,7 +46,7 @@ nav::before {
     top: -25px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: #fff;
 }
@@ -55,8 +54,10 @@ nav::before {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 10px;
     padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav ul li {
@@ -66,7 +67,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
 }
@@ -76,18 +77,19 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Título principal */
 h1 {
     text-align: center;
     margin: 20px 0;
-    font-size: 24px;
+    font-size: 22px;
     color: #333;
 }
 
 /* Carrinho */
 #carrinho {
-    max-width: 1000px;
+    max-width: 100%;
     margin: 20px auto;
-    padding: 20px;
+    padding: 15px;
     background-color: #fff;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -101,7 +103,7 @@ table {
 }
 
 th, td {
-    padding: 12px;
+    padding: 10px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -113,7 +115,7 @@ th {
 }
 
 td img {
-    width: 50px;
+    width: 40px;
     height: auto;
     margin-right: 10px;
     border-radius: 5px;
@@ -129,7 +131,7 @@ td img {
 
 .td-produto p {
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 12px;
     color: #666;
 }
 
@@ -137,15 +139,15 @@ td img {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .quantity button {
     background-color: #ff6600;
     color: #fff;
     border: none;
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 8px 12px;
+    font-size: 14px;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
@@ -157,12 +159,12 @@ td img {
 }
 
 .quantity input {
-    width: 50px;
+    width: 40px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* Botão Excluir */
@@ -171,7 +173,7 @@ td img {
     color: #fff;
     border: none;
     padding: 10px 15px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
@@ -186,16 +188,16 @@ td img {
 /* Container do Total */
 #total-carrinho {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 20px;
-    font-size: 18px;
-    flex-wrap: wrap;
+    font-size: 16px;
     padding: 10px;
 }
 
 #total-carrinho p {
     font-weight: bold;
+    text-align: center;
 }
 
 #total-carrinho button {
@@ -203,7 +205,7 @@ td img {
     color: #fff;
     padding: 12px 20px;
     font-size: 16px;
-    width: auto;
+    width: 100%;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
@@ -213,13 +215,13 @@ td img {
     background-color: #e55b00;
 }
 
-/* Estilo do rodapé */
+/* Rodapé */
 footer {
     background-color: #222;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
+    padding: 15px 0;
+    font-size: 12px;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -242,93 +244,70 @@ footer a:hover {
 }
 
 /* Estilo Responsivo para dispositivos móveis */
-@media (max-width: 768px) {
-    header .logo h1 {
-        font-size: 24px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
-
-    #carrinho {
-        padding: 15px;
-        margin: 15px auto;
-    }
-
-    table {
-        font-size: 14px;
-    }
-
-    th, td {
-        padding: 10px;
-    }
-
-    .quantity button,
-    .btn-excluir,
-    #total-carrinho button {
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-
-    .quantity input {
-        width: 40px;
-    }
-
-    #total-carrinho {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    #total-carrinho button {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .td-produto {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-
-    .td-produto p {
-        font-size: 12px;
-    }
-}
-
 @media (max-width: 480px) {
     header .logo h1 {
         font-size: 20px;
     }
 
     nav::before {
-        font-size: 20px;
+        font-size: 18px;
+        top: -20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
     }
 
     h1 {
         font-size: 20px;
     }
 
-    .quantity input {
+    #carrinho {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    td img {
         width: 30px;
     }
 
-    .td-produto p {
+    .quantity button {
+        padding: 6px 10px;
         font-size: 12px;
     }
 
-    footer {
+    .quantity input {
+        width: 30px;
         font-size: 12px;
-        padding: 15px 0;
+    }
+
+    .btn-excluir {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    #total-carrinho {
+        font-size: 14px;
+    }
+
+    #total-carrinho button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 10px;
     }
 }
