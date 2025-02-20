@@ -10,28 +10,29 @@ body {
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.8;
-    padding: 0 15px;
+    padding: 0;
 }
 
 header {
     background-color: #222;
     color: #fff;
-    padding: 20px 0;
+    padding: 15px 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header .logo h1 {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 nav {
-    display: flex;
-    justify-content: center;
     background: #333;
     padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
@@ -39,10 +40,6 @@ nav ul {
     display: flex;
     gap: 20px;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
 }
 
 nav ul li a {
@@ -61,7 +58,7 @@ nav ul li a:hover {
 h1 {
     text-align: center;
     margin: 20px 0;
-    font-size: 30px;
+    font-size: 28px;
     color: #222;
 }
 
@@ -69,7 +66,7 @@ h1 {
 #carrinho {
     max-width: 1000px;
     margin: 20px auto;
-    padding: 25px;
+    padding: 20px;
     background-color: #fff;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -95,10 +92,10 @@ th {
 }
 
 td img {
-    width: 60px;
+    width: 50px;
     height: auto;
-    margin-right: 12px;
-    border-radius: 6px;
+    margin-right: 10px;
+    border-radius: 5px;
 }
 
 button {
@@ -127,9 +124,10 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 25px;
-    font-size: 20px;
+    margin-top: 20px;
+    font-size: 18px;
     flex-wrap: wrap;
+    padding: 10px;
 }
 
 #total-carrinho p {
@@ -142,24 +140,15 @@ button:hover {
     width: auto;
 }
 
-/* Responsividade */
+/* Responsividade Melhorada */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: row;
+    nav ul {
+        flex-wrap: wrap;
         justify-content: center;
     }
     
-    nav ul {
-        flex-wrap: nowrap;
-        gap: 15px;
-    }
-    
-    nav ul li {
-        display: inline;
-    }
-    
     #carrinho {
-        padding: 20px;
+        padding: 15px;
     }
 
     table {
@@ -167,23 +156,29 @@ button:hover {
     }
 
     th, td {
-        padding: 12px;
+        padding: 10px;
     }
 
     #total-carrinho {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
     }
 
     #total-carrinho button {
         width: 100%;
-        margin-top: 12px;
+        margin-top: 10px;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 24px;
+        font-size: 22px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 
     table {
@@ -191,28 +186,27 @@ button:hover {
     }
 
     th, td {
-        padding: 10px;
+        padding: 8px;
     }
 
     #total-carrinho p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     #total-carrinho button {
-        padding: 14px;
-        font-size: 16px;
+        padding: 12px;
+        font-size: 14px;
     }
 }
 
-/* Rodapé */
+/* Rodapé Melhorado */
 footer {
     background-color: #222;
     color: #fff;
-    padding: 15px 0;
+    padding: 10px 0;
     text-align: center;
-    font-size: 14px;
-    margin-top: 20px;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    margin-top: 15px;
 }
 
 footer p {
