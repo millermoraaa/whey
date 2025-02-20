@@ -17,7 +17,7 @@ body {
 }
 
 .header {
-    background-color: #007bff;
+    background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -52,7 +52,7 @@ body {
 }
 
 .pix-button, .credito-button {
-    background-color: #28a745;
+    background-color: #ff9800;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -63,7 +63,7 @@ body {
 }
 
 .pix-button:hover, .credito-button:hover {
-    background-color: #218838;
+    background-color: #e68900;
 }
 
 form {
