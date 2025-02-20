@@ -9,7 +9,7 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
-    line-height: 1.8;
+    line-height: 1.6;
     padding: 0;
 }
 
@@ -25,7 +25,7 @@ header {
 }
 
 header .logo h1 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -55,7 +55,7 @@ nav::before {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     padding: 0;
 }
 
@@ -79,7 +79,7 @@ nav ul li a:hover {
 h1 {
     text-align: center;
     margin: 20px 0;
-    font-size: 28px;
+    font-size: 24px;
     color: #333;
 }
 
@@ -101,7 +101,7 @@ table {
 }
 
 th, td {
-    padding: 14px;
+    padding: 12px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -144,8 +144,8 @@ td img {
     background-color: #ff6600;
     color: #fff;
     border: none;
-    padding: 12px 18px;
-    font-size: 18px;
+    padding: 10px 15px;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
@@ -157,12 +157,12 @@ td img {
 }
 
 .quantity input {
-    width: 60px;
+    width: 50px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* Botão Excluir */
@@ -170,7 +170,7 @@ td img {
     background-color: #ff6600;
     color: #fff;
     border: none;
-    padding: 12px 18px;
+    padding: 10px 15px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
@@ -202,7 +202,7 @@ td img {
     background-color: #ff6600;
     color: #fff;
     padding: 12px 20px;
-    font-size: 18px;
+    font-size: 16px;
     width: auto;
     border-radius: 5px;
     cursor: pointer;
@@ -243,7 +243,23 @@ footer a:hover {
 
 /* Estilo Responsivo para dispositivos móveis */
 @media (max-width: 768px) {
-    /* Ajustes na exibição do carrinho */
+    header .logo h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
     #carrinho {
         padding: 15px;
         margin: 15px auto;
@@ -253,11 +269,19 @@ footer a:hover {
         font-size: 14px;
     }
 
+    th, td {
+        padding: 10px;
+    }
+
     .quantity button,
     .btn-excluir,
     #total-carrinho button {
-        padding: 12px 18px;
-        font-size: 16px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .quantity input {
+        width: 40px;
     }
 
     #total-carrinho {
@@ -271,80 +295,40 @@ footer a:hover {
         margin-top: 10px;
     }
 
-    /* Ajuste nos botões "Finalizar Compra" e "Continuar Comprando" */
-    #total-carrinho {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    #total-carrinho button {
-        width: 48%;
-    }
-
-    /* Ajustes nos itens da tabela */
     .td-produto {
-        display: flex;
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
     }
 
     .td-produto p {
-        font-size: 14px;
-    }
-
-    /* Ajuste de navegação para dispositivos móveis */
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-        padding: 10px;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Ajuste no botão Excluir */
-    .btn-excluir {
-        width: 100%;
-        padding: 14px;
-        margin-top: 10px;
+        font-size: 12px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Ajustes para telas menores */
+    header .logo h1 {
+        font-size: 20px;
+    }
+
+    nav::before {
+        font-size: 20px;
+    }
+
     h1 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .quantity input {
-        width: 50px;
+        width: 30px;
     }
 
     .td-produto p {
         font-size: 12px;
     }
 
-    .td-produto {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Ajustes no rodapé */
     footer {
         font-size: 12px;
         padding: 15px 0;
     }
 }
-
