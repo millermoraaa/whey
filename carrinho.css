@@ -176,6 +176,7 @@ td img {
     border-radius: 5px !important;
     cursor: pointer !important;
     transition: background 0.3s !important;
+    width: 100%; /* Garante que o botão "Excluir" ocupe 100% da largura no celular */
 }
 
 .btn-excluir:hover {
@@ -297,8 +298,26 @@ footer a:hover {
         gap: 15px;
     }
 
+    nav ul li {
+        flex: 1 0 25%; /* Cada item de navegação ocupa 25% da largura, ajustando para o celular */
+        text-align: center;
+    }
+
     nav ul li a {
         font-size: 14px;
+    }
+
+    /* Botões "Finalizar Compra" e "Continuar Comprando" na horizontal */
+    #total-carrinho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    #total-carrinho button {
+        width: 48%; /* Faz os botões ficarem lado a lado */
     }
 }
 
@@ -329,3 +348,4 @@ footer a:hover {
         font-size: 12px;
     }
 }
+
