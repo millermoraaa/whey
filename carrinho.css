@@ -29,6 +29,7 @@ header .logo h1 {
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 10px;
+    color: #fff;
 }
 
 nav {
@@ -36,6 +37,19 @@ nav {
     padding: 10px 0;
     display: flex;
     justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+nav::before {
+    content: "WheyPro";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
 }
 
 nav ul {
@@ -148,6 +162,8 @@ td img {
 }
 
 #total-carrinho button {
+    background-color: #ff6600;
+    color: #fff;
     padding: 14px 24px;
     font-size: 18px;
     width: auto;
@@ -225,5 +241,4 @@ footer {
 footer p {
     margin: 0;
 }
-
 
