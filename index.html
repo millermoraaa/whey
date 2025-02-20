@@ -66,13 +66,31 @@
 
     <script>
         function adicionarAoCarrinho(nomeProduto, imagemProduto, precoProduto) {
-            // Salva os detalhes do produto no localStorage
+            // Garantir que o preço seja um número válido
+            precoProduto = parseFloat(precoProduto);
+
+            // Se o preço não for um número válido, retornar
+            if (isNaN(precoProduto)) {
+                alert("Erro: preço inválido.");
+                return;
+            }
+
+            // Recupera os produtos já adicionados ao carrinho do localStorage
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            // Cria um objeto para o novo produto
             const produto = {
                 nome: nomeProduto,
                 imagem: imagemProduto,
-                preco: precoProduto
+                preco: precoProduto,
+                quantidade: 1 // Inicia com 1 unidade
             };
-            localStorage.setItem('produtoSelecionado', JSON.stringify(produto));
+
+            // Adiciona o novo produto ao array do carrinho
+            carrinho.push(produto);
+
+            // Salva o array atualizado de volta no localStorage
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
             // Redireciona para a página do carrinho
             window.location.href = 'carrinho.html';
@@ -80,3 +98,4 @@
     </script>
 </body>
 </html>
+
