@@ -102,8 +102,16 @@
             carregarCarrinho(); // Atualizar carrinho após remoção
         }
 
-        // Finalizar compra - redireciona para pagamento.html
+        // Finalizar compra - redireciona para pagamento.html com os dados do carrinho
         function finalizarCompra() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const total = document.getElementById('total-valor').textContent;
+
+            // Salvar os dados do carrinho e o total no localStorage
+            localStorage.setItem('carrinhoPagamento', JSON.stringify(carrinho));
+            localStorage.setItem('totalPagamento', total);
+
+            // Redirecionar para a página de pagamento
             window.location.href = 'pagamento.html';
         }
 
