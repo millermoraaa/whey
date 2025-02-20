@@ -6,7 +6,6 @@
     <meta name="description" content="Página de pagamento segura para adquirir produtos WheyPro. Escolha entre Pix ou Cartão de Crédito.">
     <title>Página de Pagamento - WheyPro</title>
     <link rel="stylesheet" href="pagamento.css">
-    <!-- Adicione um ícone para a aba do navegador -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -23,15 +22,30 @@
         <h2>Selecione seu método de pagamento para completar sua compra</h2>
     </section>
 
+    <!-- Seção para exibir os itens do carrinho -->
+    <section id="resumo-carrinho">
+        <h3>Resumo do Carrinho</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-resumo-carrinho"></tbody>
+        </table>
+        <p>Total: R$ <span id="total-resumo">0,00</span></p>
+    </section>
+
     <div class="payment-options">
         <!-- Opção de pagamento via Pix -->
         <article class="payment-option">
             <img src="logo-pix-256.png" alt="Ícone Pix" class="payment-icon">
             <h3>Pagar via Pix</h3>
             <p>Escolha esta opção para pagar com Pix e ser redirecionado para o atendente no WhatsApp.</p>
-            <a href="https://wa.me/message/XEE7TITFPKF6K1" target="_blank" rel="noopener noreferrer">
-                <button class="pix-button">Pagar com Pix</button>
-            </a>
+            <button id="pagar-pix" class="pix-button">Pagar com Pix</button>
         </article>
 
         <!-- Opção de pagamento via Cartão de Crédito -->
@@ -63,7 +77,7 @@
                 </div>
                 <div class="form-group">
                     <label for="data-nascimento">Data de Nascimento:</label>
-                    <input type="text" id="data-nascimento" name="Data de Nascimento" placeholder="data-nascimento" required>
+                    <input type="text" id="data-nascimento" name="Data de Nascimento" required>
                 </div>
                 <div class="form-group">
                     <label for="endereco">Endereço:</label>
@@ -121,6 +135,66 @@
     <p>&copy; 2025 WheyPro - Todos os direitos reservados</p>
     <p><a href="politica-de-privacidade.html" target="_blank">Política de Privacidade</a> | <a href="termos-de-uso.html" target="_blank">Termos de Uso</a></p>
 </footer>
+
+<script>
+    // Função para carregar e exibir os itens do carrinho
+    function carregarResumoCarrinho() {
+        const carrinho = JSON.parse(localStorage.getItem('carrinhoPagamento')) || [];
+        const total = localStorage.getItem('totalPagamento') || '0,00';
+        const tabelaResumo = document.getElementById('tabela-resumo-carrinho');
+        const totalResumo = document.getElementById('total-resumo');
+
+        // Limpar conteúdo anterior
+        tabelaResumo.innerHTML = '';
+
+        // Preencher a tabela com os itens do carrinho
+        carrinho.forEach(produto => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${produto.nome}</td>
+                <td>${produto.quantidade}</td>
+                <td>R$ ${produto.preco.toFixed(2)}</td>
+                <td>R$ ${(produto.preco * produto.quantidade).toFixed(2)}</td>
+            `;
+            tabelaResumo.appendChild(tr);
+        });
+
+        // Atualizar o total
+        totalResumo.textContent = total;
+    }
+
+    // Função para redirecionar para o WhatsApp com os dados do carrinho
+    function redirecionarWhatsApp() {
+        const carrinho = JSON.parse(localStorage.getItem('carrinhoPagamento')) || [];
+        const total = localStorage.getItem('totalPagamento') || '0,00';
+
+        // Formatar a mensagem
+        let mensagem = "Olá, gostaria de finalizar minha compra com os seguintes itens:\n\n";
+        carrinho.forEach(produto => {
+            mensagem += `- ${produto.nome} (Quantidade: ${produto.quantidade}, Preço Unitário: R$ ${produto.preco.toFixed(2)})\n`;
+        });
+        mensagem += `\nTotal: R$ ${total}\n`;
+        mensagem += "Forma de pagamento: Pix";
+
+        // Codificar a mensagem para uso no link
+        const mensagemCodificada = encodeURIComponent(mensagem);
+
+        // Número de WhatsApp da loja (substitua pelo número correto)
+        const numeroWhatsApp = "SEU_NUMERO_DE_WHATSAPP"; // Exemplo: 5511999999999
+
+        // Criar o link do WhatsApp
+        const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+
+        // Redirecionar o usuário
+        window.location.href = linkWhatsApp;
+    }
+
+    // Adicionar evento ao botão "Pagar com Pix"
+    document.getElementById('pagar-pix').addEventListener('click', redirecionarWhatsApp);
+
+    // Carregar o resumo do carrinho ao carregar a página
+    window.onload = carregarResumoCarrinho;
+</script>
 
 </body>
 </html>
