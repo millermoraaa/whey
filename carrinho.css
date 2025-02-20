@@ -25,7 +25,7 @@ header {
 }
 
 header .logo h1 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -80,7 +80,7 @@ h1 {
     text-align: center;
     margin: 20px 0;
     font-size: 28px;
-    color: #fff;
+    color: #333;
 }
 
 /* Carrinho */
@@ -141,19 +141,19 @@ td img {
 }
 
 .quantity button {
-    background-color: #ff6600 !important;
-    color: #fff !important;
-    border: none !important;
-    padding: 14px 20px !important;
-    font-size: 20px !important;
-    font-weight: bold !important;
-    border-radius: 5px !important;
-    cursor: pointer !important;
-    transition: background 0.3s !important;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .quantity button:hover {
-    background-color: #e55b00 !important;
+    background-color: #e55b00;
 }
 
 .quantity input {
@@ -167,20 +167,20 @@ td img {
 
 /* Botão Excluir */
 .btn-excluir {
-    background-color: #ff6600 !important;
-    color: #fff !important;
-    border: none !important;
-    padding: 14px 20px !important;
-    font-size: 16px !important;
-    font-weight: bold !important;
-    border-radius: 5px !important;
-    cursor: pointer !important;
-    transition: background 0.3s !important;
-    width: 100%; /* Garante que o botão "Excluir" ocupe 100% da largura no celular */
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
 }
 
 .btn-excluir:hover {
-    background-color: #e55b00 !important;
+    background-color: #e55b00;
 }
 
 /* Container do Total */
@@ -199,18 +199,18 @@ td img {
 }
 
 #total-carrinho button {
-    background-color: #ff6600 !important;
-    color: #fff !important;
-    padding: 14px 24px !important;
-    font-size: 18px !important;
-    width: auto !important;
-    border-radius: 5px !important;
-    cursor: pointer !important;
-    transition: background 0.3s !important;
+    background-color: #ff6600;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 18px;
+    width: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 #total-carrinho button:hover {
-    background-color: #e55b00 !important;
+    background-color: #e55b00;
 }
 
 /* Estilo do rodapé */
@@ -243,9 +243,10 @@ footer a:hover {
 
 /* Estilo Responsivo para dispositivos móveis */
 @media (max-width: 768px) {
-    /* Ajustes na disposição do carrinho */
+    /* Ajustes na exibição do carrinho */
     #carrinho {
-        padding: 10px;
+        padding: 15px;
+        margin: 15px auto;
     }
 
     table {
@@ -255,12 +256,13 @@ footer a:hover {
     .quantity button,
     .btn-excluir,
     #total-carrinho button {
-        padding: 10px 16px;
+        padding: 12px 18px;
         font-size: 16px;
     }
 
     #total-carrinho {
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
@@ -269,55 +271,54 @@ footer a:hover {
         margin-top: 10px;
     }
 
-    /* Ajustes na exibição da tabela */
+    /* Ajuste nos botões "Finalizar Compra" e "Continuar Comprando" */
+    #total-carrinho {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    #total-carrinho button {
+        width: 48%;
+    }
+
+    /* Ajustes nos itens da tabela */
     .td-produto {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
     }
 
     .td-produto p {
-        margin-top: 0;
+        font-size: 14px;
     }
 
-    /* Ajuste nos botões de "Excluir" e "Continuar Comprando" */
-    .quantity {
-        flex-direction: column;
-    }
-
-    .quantity button,
-    .btn-excluir {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    /* Ajustes na navegação */
+    /* Ajuste de navegação para dispositivos móveis */
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         gap: 15px;
     }
 
     nav ul li {
-        flex: 1 0 25%; /* Cada item de navegação ocupa 25% da largura, ajustando para o celular */
+        width: 100%;
         text-align: center;
     }
 
     nav ul li a {
-        font-size: 14px;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
     }
 
-    /* Botões "Finalizar Compra" e "Continuar Comprando" na horizontal */
-    #total-carrinho {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    #total-carrinho button {
-        width: 48%; /* Faz os botões ficarem lado a lado */
+    /* Ajuste no botão Excluir */
+    .btn-excluir {
+        width: 100%;
+        padding: 14px;
+        margin-top: 10px;
     }
 }
 
@@ -327,25 +328,23 @@ footer a:hover {
         font-size: 24px;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-
     .quantity input {
         width: 50px;
     }
 
-    .td-produto {
-        text-align: center;
-    }
-
     .td-produto p {
         font-size: 12px;
+    }
+
+    .td-produto {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajustes no rodapé */
+    footer {
+        font-size: 12px;
+        padding: 15px 0;
     }
 }
 
