@@ -95,7 +95,7 @@ input, select {
 }
 
 .footer a {
-    color: #ffcc00;
+    color: white;
     text-decoration: none;
 }
 
@@ -175,4 +175,12 @@ input, select {
     #resumo-carrinho #total-resumo {
         font-size: 18px;
     }
+}
+/* Espaçamento entre o resumo do carrinho e a seção de pagamento */
+#resumo-carrinho {
+    margin-bottom: 40px; /* Ajuste o valor conforme necessário */
+}
+
+.payment-intro {
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
 }
