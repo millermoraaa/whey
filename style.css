@@ -154,11 +154,12 @@ nav ul li a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Alteração para garantir que as imagens dos novos produtos tenham o mesmo tamanho */
 .produto img {
     width: 100%;
     max-width: 150px;
-    height: auto;
-    object-fit: contain;
+    height: 150px; /* Altura fixa para todas as imagens */
+    object-fit: contain; /* Mantém a proporção da imagem */
     border-radius: 5px;
     background-color: #f9f9f9;
     margin-bottom: 1rem;
@@ -299,71 +300,6 @@ footer p {
     font-size: 0.9rem;
 }
 
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-    .produto {
-        width: calc(50% - 1.5rem);
-    }
-}
-
-@media (max-width: 480px) {
-    header .logo h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-
-    .produto {
-        width: calc(50% - 1rem);
-        padding: 1rem;
-    }
-
-    .produto img {
-        max-width: 120px;
-    }
-
-    .produto h3 {
-        font-size: 1rem;
-    }
-
-    .produto p {
-        font-size: 0.8rem;
-    }
-
-    .produto .preco {
-        font-size: 1rem;
-    }
-
-    .produto button {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-    }
-
-    .formulario-contato {
-        padding: 1rem;
-    }
-
-    .formulario-contato h3 {
-        font-size: 1.1rem;
-    }
-
-    .formulario-contato input,
-    .formulario-contato textarea {
-        padding: 0.5rem;
-        font-size: 0.85rem;
-    }
-
-    .formulario-contato button {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
-    }
-}
 /* Depoimentos de Clientes */
 .depoimentos-clientes {
     padding: 3rem 2rem;
@@ -445,5 +381,71 @@ footer p {
 
     .nome-cliente {
         font-size: 0.9rem;
+    }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .produto {
+        width: calc(50% - 1.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .produto {
+        width: calc(50% - 1rem);
+        padding: 1rem;
+    }
+
+    .produto img {
+        max-width: 120px;
+    }
+
+    .produto h3 {
+        font-size: 1rem;
+    }
+
+    .produto p {
+        font-size: 0.8rem;
+    }
+
+    .produto .preco {
+        font-size: 1rem;
+    }
+
+    .produto button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .formulario-contato {
+        padding: 1rem;
+    }
+
+    .formulario-contato h3 {
+        font-size: 1.1rem;
+    }
+
+    .formulario-contato input,
+    .formulario-contato textarea {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .formulario-contato button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 }
