@@ -1,3 +1,4 @@
+
 /* Reset básico */
 * {
     margin: 0;
@@ -115,6 +116,55 @@ nav ul li a:hover {
 .hero-text .btn:hover {
     background-color: #e65c00;
     transform: translateY(-2px);
+}
+
+/* Nova Seção de Informações */
+.informacoes {
+    padding: 3rem 2rem;
+    background-color: #fff;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 1.5rem);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.info-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 /* Produtos */
@@ -395,66 +445,90 @@ footer p {
     margin-top: 0.5rem;
 }
 
-/* Nova Seção de Informações (Agora abaixo de Depoimentos) */
-.informacoes {
-    padding: 3rem 2rem;
-    background-color: #fff;
-    margin: 2rem auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
-}
-
-.info-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 1.5rem;
-    flex-wrap: nowrap; /* Impede que os cartões quebrem para a próxima linha */
-    overflow-x: auto; /* Adiciona scroll horizontal se necessário */
-}
-
-.info-card {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-    flex: 0 0 calc(33.333% - 1.5rem); /* Mantém os cartões lado a lado */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-width: 250px; /* Define uma largura mínima para os cartões */
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.info-card img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
-}
-
-.info-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.info-card p {
-    font-size: 0.85rem;
-    color: #666;
-}
-
 /* Responsividade para Informações */
 @media (max-width: 768px) {
     .info-card {
-        flex: 0 0 calc(50% - 1.5rem); /* 2 cartões por linha em telas menores */
+        flex: 1 1 calc(50% - 1.5rem);
     }
 }
 
 @media (max-width: 480px) {
     .info-card {
-        flex: 0 0 100%; /* 1 cartão por linha em telas muito pequenas */
+        flex: 1 1 100%;
+    }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .produto {
+        width: calc(50% - 1.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+
+    .produto {
+        width: calc(50% - 1rem);
+        padding: 1rem;
+    }
+
+    .produto img {
+        max-width: 120px;
+    }
+
+    .produto h3 {
+        font-size: 1rem;
+    }
+
+    .produto p {
+        font-size: 0.8rem;
+    }
+
+    .produto .preco {
+        font-size: 1rem;
+    }
+
+    .produto button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .formulario-contato {
+        padding: 1.5rem;
+    }
+
+    .formulario-contato h3 {
+        font-size: 1.5rem;
+    }
+
+    .formulario-contato label {
+        font-size: 0.9rem;
+    }
+
+    .formulario-contato input,
+    .formulario-contato textarea {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .formulario-contato textarea {
+        min-height: 120px;
+    }
+
+    .formulario-contato button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
     }
 }
