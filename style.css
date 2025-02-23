@@ -534,7 +534,7 @@ footer p {
 }
 /* Nova Seção de Informações (Agora abaixo de Depoimentos) */
 .informacoes {
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
     background-color: #fff;
     margin: 2rem auto;
     border-radius: 10px;
@@ -545,20 +545,19 @@ footer p {
 .info-container {
     display: flex;
     justify-content: space-between;
-    gap: 1.5rem;
-    flex-wrap: nowrap; /* Impede que os cartões quebrem para a próxima linha */
-    overflow-x: auto; /* Adiciona scroll horizontal se necessário */
+    gap: 1rem;
+    flex-wrap: wrap; /* Permite que os cartões quebrem para a próxima linha se necessário */
 }
 
 .info-card {
     background-color: #f9f9f9;
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
-    flex: 0 0 calc(33.333% - 1.5rem); /* Mantém os cartões lado a lado */
+    flex: 1 1 calc(33.333% - 1rem); /* Distribui os cartões igualmente */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-width: 250px; /* Define uma largura mínima para os cartões */
+    min-width: 150px; /* Largura mínima para caber em telas pequenas */
 }
 
 .info-card:hover {
@@ -567,31 +566,52 @@ footer p {
 }
 
 .info-card img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.75rem;
 }
 
 .info-card h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 0.5rem;
     color: #333;
 }
 
 .info-card p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #666;
+    line-height: 1.4;
 }
 
 /* Responsividade para Informações */
 @media (max-width: 768px) {
     .info-card {
-        flex: 0 0 calc(50% - 1.5rem); /* 2 cartões por linha em telas menores */
+        flex: 1 1 calc(50% - 1rem); /* 2 cartões por linha em telas menores */
     }
 }
 
 @media (max-width: 480px) {
+    .info-container {
+        gap: 0.5rem; /* Reduz o espaçamento entre os cartões */
+    }
+
     .info-card {
-        flex: 0 0 100%; /* 1 cartão por linha em telas muito pequenas */
+        flex: 1 1 calc(33.333% - 0.5rem); /* 3 cartões por linha em telas pequenas */
+        padding: 0.75rem;
+        min-width: 100px; /* Largura mínima menor para caber 3 cartões */
+    }
+
+    .info-card img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.5rem;
+    }
+
+    .info-card h3 {
+        font-size: 0.8rem;
+    }
+
+    .info-card p {
+        font-size: 0.7rem;
     }
 }
