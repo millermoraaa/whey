@@ -68,10 +68,10 @@ nav ul li a:hover {
 .hero-image {
     width: 100%;
     height: auto;
-    max-width: 800px; /* Ajuste o tamanho máximo da imagem */
+    max-width: 800px;
     display: block;
     margin: 0 auto;
-    border-radius: 10px; /* Adicione bordas arredondadas, se desejar */
+    border-radius: 10px;
 }
 
 .hero-text {
@@ -154,12 +154,11 @@ nav ul li a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Alteração para garantir que as imagens dos novos produtos tenham o mesmo tamanho */
 .produto img {
     width: 100%;
     max-width: 150px;
-    height: 150px; /* Altura fixa para todas as imagens */
-    object-fit: contain; /* Mantém a proporção da imagem */
+    height: 150px;
+    object-fit: contain;
     border-radius: 5px;
     background-color: #f9f9f9;
     margin-bottom: 1rem;
