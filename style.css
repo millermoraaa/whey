@@ -311,18 +311,21 @@ footer p {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
+    overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
 }
 
 .depoimentos-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: flex-start; /* Alinha os depoimentos à esquerda */
     gap: 1.5rem;
     margin: 0 auto;
+    padding-bottom: 1rem; /* Espaço para a barra de rolagem */
+    min-width: 300px; /* Largura mínima para evitar quebra de layout */
 }
 
 .depoimento {
-    width: 30%;
+    flex: 0 0 auto; /* Impede que os depoimentos quebrem para a próxima linha */
+    width: 250px; /* Largura fixa para cada depoimento */
     padding: 1.5rem;
     background-color: #f9f9f9;
     border-radius: 10px;
@@ -361,14 +364,13 @@ footer p {
 
 /* Responsividade para Depoimentos */
 @media (max-width: 768px) {
-    .depoimento {
-        width: calc(50% - 1.5rem);
+    .depoimentos-container {
+        justify-content: flex-start; /* Mantém os depoimentos alinhados à esquerda */
+        gap: 1rem; /* Reduz o espaçamento entre os depoimentos */
     }
-}
 
-@media (max-width: 480px) {
     .depoimento {
-        width: 100%;
+        width: 220px; /* Reduz a largura dos depoimentos para telas menores */
         padding: 1rem;
     }
 
@@ -383,6 +385,30 @@ footer p {
 
     .nome-cliente {
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .depoimentos-container {
+        gap: 0.75rem; /* Espaçamento ainda menor para celulares */
+    }
+
+    .depoimento {
+        width: 200px; /* Largura menor para celulares */
+        padding: 0.75rem;
+    }
+
+    .foto-cliente {
+        width: 70px;
+        height: 70px;
+    }
+
+    .depoimento p {
+        font-size: 0.8rem;
+    }
+
+    .nome-cliente {
+        font-size: 0.85rem;
     }
 }
 
