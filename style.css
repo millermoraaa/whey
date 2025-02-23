@@ -92,13 +92,13 @@ nav ul li a:hover {
     margin-bottom: 1rem;
     font-weight: 700;
     letter-spacing: -1px;
-    color: #000000;
+    color: #ff6600;
 }
 
 .hero-text p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #fff;
 }
 
 .hero-text .btn {
