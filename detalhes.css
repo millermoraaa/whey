@@ -187,3 +187,49 @@ footer {
 .social-media a:hover {
     color: #f39c12;
 }
+/* Estilos para telas menores que 768px (dispositivos móveis) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .produto-detalhes {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .imagem-container img {
+        width: 100%;
+    }
+
+    .info-produto {
+        text-align: center;
+    }
+
+    .quantidade {
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}
