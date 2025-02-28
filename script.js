@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const produtoDetalhes = document.querySelector('.produto-detalhes');
-    const imagemProduto = produtoDetalhes.querySelector('img');
-    const zoom = produtoDetalhes.querySelector('.zoom');
+    const imagemContainer = document.querySelector('.imagem-container');
+    const imagemProduto = imagemContainer.querySelector('img');
+    const zoom = imagemContainer.querySelector('.zoom');
 
-    produtoDetalhes.addEventListener('mousemove', function(e) {
-        const { left, top, width, height } = produtoDetalhes.getBoundingClientRect();
+    imagemContainer.addEventListener('mousemove', function(e) {
+        const { left, top, width, height } = imagemContainer.getBoundingClientRect();
         const x = e.clientX - left;
         const y = e.clientY - top;
 
@@ -17,14 +17,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const bgX = (x * scaleX) - (zoomWidth / 2);
         const bgY = (y * scaleY) - (zoomHeight / 2);
 
-        zoom.style.display = 'block';
-        zoom.style.left = `${x + 20}px`;
-        zoom.style.top = `${y + 20}px`;
-        zoom.style.backgroundImage = `url('${imagemProduto.src}')`;
-        zoom.style.backgroundPosition = `-${bgX}px -${bgY}px`;
+        // Verifica se o cursor está dentro dos limites da imagem
+        if (x >= 0 && x <= width && y >= 0 && y <= height) {
+            zoom.style.display = 'block';
+            zoom.style.left = `${x + 20}px`;
+            zoom.style.top = `${y + 20}px`;
+            zoom.style.backgroundImage = `url('${imagemProduto.src}')`;
+            zoom.style.backgroundPosition = `-${bgX}px -${bgY}px`;
+        } else {
+            zoom.style.display = 'none';
+        }
     });
 
-    produtoDetalhes.addEventListener('mouseleave', function() {
+    imagemContainer.addEventListener('mouseleave', function() {
         zoom.style.display = 'none';
     });
 });
