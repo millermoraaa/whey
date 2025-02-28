@@ -89,7 +89,7 @@ input, select {
 .footer {
     text-align: center;
     padding: 15px;
-    background-color: #333;
+    background-color: #000000;
     color: white;
     border-radius: 0 0 10px 10px;
 }
