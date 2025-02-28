@@ -233,3 +233,33 @@ footer {
         padding: 15px;
     }
 }
+/* Ajustes gerais para telas menores */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    header .logo h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+    }
+
+    .info-produto h3 {
+        font-size: 1.5em;
+    }
+
+    .preco {
+        font-size: 1.5em;
+    }
+
+    .descricao {
+        font-size: 1em;
+    }
+
+    .quantidade input {
+        width: 50px;
+    }
+}
