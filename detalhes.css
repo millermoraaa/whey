@@ -304,3 +304,17 @@ nav ul li a:hover {
         font-size: 0.9em; /* Reduz o tamanho da fonte para caber melhor */
     }
 }
+.info-frete-parcelamento {
+    margin: 15px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.info-frete-parcelamento p {
+    margin: 5px 0;
+}
+
+.info-frete-parcelamento i {
+    margin-right: 10px;
+    color: #28a745; /* Cor verde para os ícones */
+}
