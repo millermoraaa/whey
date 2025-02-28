@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto - WheyPro</title>
+    <link rel="stylesheet" href="detalhes.css">
+    <link rel="icon" type="image/png" href="LOGOWHEYPRO.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGOWHEYPRO.jpg" alt="Logo WheyPro">
+            <h1>WheyPro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#produtos"><i class="fas fa-store"></i> Produtos</a></li>
+                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+                <li><a href="carrinho.html"><i class="fas fa-shopping-cart"></i> Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="detalhes-produto">
+        <h2>Detalhes do Produto</h2>
+        <div class="produto-detalhes">
+            <div class="imagem-container">
+                <img id="produto-imagem" src="" alt="Imagem do Produto">
+                <div class="zoom"></div>
+            </div>
+            <div class="info-produto">
+                <h3 id="produto-nome"></h3>
+                <p id="produto-preco" class="preco"></p>
+                <p id="produto-descricao" class="descricao"></p>
+                <div class="quantidade">
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" value="1" min="1">
+                </div>
+                <button onclick="adicionarAoCarrinho()"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <p>&copy; 2023 WheyPro. Todos os direitos reservados.</p>
+            <p>Contato: <a href="mailto:wheypro@gmail.com">wheypro@gmail.com</a></p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Recupera os detalhes do produto do localStorage
+        const produto = JSON.parse(localStorage.getItem('produtoSelecionado'));
+
+        // Exibe os detalhes do produto na página
+        document.getElementById('produto-imagem').src = produto.imagem;
+        document.getElementById('produto-nome').textContent = produto.nome;
+        document.getElementById('produto-preco').textContent = `R$ ${produto.preco.toFixed(2)}`;
+        document.getElementById('produto-descricao').textContent = produto.descricao;
+
+        function adicionarAoCarrinho() {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const quantidade = parseInt(document.getElementById('quantidade').value);
+
+            // Verifica se o produto já existe no carrinho
+            const produtoExistente = carrinho.find(item => item.nome === produto.nome);
+            if (produtoExistente) {
+                produtoExistente.quantidade += quantidade;
+            } else {
+                produto.quantidade = quantidade;
+                carrinho.push(produto);
+            }
+            
+            // Atualiza o carrinho no localStorage
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            window.location.href = 'carrinho.html'; // Redireciona para a página do carrinho
+        }
+    </script>
+</body>
+</html>
