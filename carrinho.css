@@ -8,14 +8,14 @@
 body {
     font-family: 'Poppins', Arial, sans-serif;
     background-color: #f9f9f9;
-    color: #333;
+    color: #000000;
     line-height: 1.6;
     padding: 0;
 }
 
 /* Header */
 header {
-    background-color: #222;
+    background-color: #000000;
     color: #fff;
     padding: 15px 10px;
     text-align: center;
@@ -32,7 +32,7 @@ header .logo h1 {
 
 /* Navegação */
 nav {
-    background: #333;
+    background: #000000;
     padding: 10px 0;
     display: flex;
     justify-content: center;
