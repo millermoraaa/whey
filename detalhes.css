@@ -187,134 +187,90 @@ footer {
 .social-media a:hover {
     color: #f39c12;
 }
-/* Estilos para telas menores que 768px (dispositivos móveis) */
+
+/* Estilos para a seção de afiliados */
+#afiliados {
+    padding: 40px 20px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.afiliados-info {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.afiliados-info p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.afiliados-info ol {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.afiliados-info ol li {
+    margin: 10px 0;
+}
+
+.gerar-link {
+    margin: 20px 0;
+}
+
+.gerar-link button {
+    background-color: #27ae60;
+    margin: 10px 0;
+}
+
+.gerar-link button:hover {
+    background-color: #219653;
+}
+
+.link-gerado {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #2c3e50;
+    word-break: break-all;
+}
+
+.btn-copiar {
+    background-color: #3498db;
+    display: none;
+}
+
+.btn-copiar:hover {
+    background-color: #2980b9;
+}
+
+.compartilhar-redes {
+    margin-top: 20px;
+}
+
+.compartilhar-redes a {
+    color: #2c3e50;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.compartilhar-redes a:hover {
+    color: #f39c12;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
-    }
-
-    header .logo {
-        margin-bottom: 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
     .produto-detalhes {
         flex-direction: column;
-        padding: 15px;
-    }
-
-    .imagem-container img {
-        width: 100%;
     }
 
     .info-produto {
         text-align: center;
     }
 
-    .quantidade {
-        text-align: center;
-    }
-
-    button {
+    .gerar-link button, .btn-copiar {
         width: 100%;
-        padding: 15px;
     }
-
-    footer {
-        padding: 15px;
-    }
-}
-/* Ajustes gerais para telas menores */
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-
-    header .logo h1 {
-        font-size: 1.5em;
-    }
-
-    nav ul li a {
-        font-size: 1em;
-    }
-
-    .info-produto h3 {
-        font-size: 1.5em;
-    }
-
-    .preco {
-        font-size: 1.5em;
-    }
-
-    .descricao {
-        font-size: 1em;
-    }
-
-    .quantidade input {
-        width: 50px;
-    }
-}
-/* Estilos gerais para o menu */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Centraliza os itens horizontalmente */
-}
-
-nav ul li {
-    margin: 0 10px; /* Espaçamento entre os itens */
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1em;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #f39c12;
-}
-
-/* Ajustes para telas menores (celulares) */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: row; /* Mantém os itens na horizontal */
-        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se necessário */
-        justify-content: center; /* Centraliza os itens */
-    }
-
-    nav ul li {
-        margin: 5px 10px; /* Reduz o espaçamento entre os itens */
-    }
-
-    nav ul li a {
-        font-size: 0.9em; /* Reduz o tamanho da fonte para caber melhor */
-    }
-}
-.info-frete-parcelamento {
-    margin: 15px 0;
-    font-size: 16px;
-    color: #333;
-}
-
-.info-frete-parcelamento p {
-    margin: 5px 0;
-}
-
-.info-frete-parcelamento i {
-    margin-right: 10px;
-    color: #28a745; /* Cor verde para os ícones */
 }
