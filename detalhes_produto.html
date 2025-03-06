@@ -86,7 +86,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script>
         // Recupera os detalhes do produto do localStorage
         const produto = JSON.parse(localStorage.getItem('produtoSelecionado'));
@@ -97,6 +96,7 @@
         document.getElementById('produto-preco').textContent = `R$ ${produto.preco.toFixed(2)}`;
         document.getElementById('produto-descricao').textContent = produto.descricao;
 
+        // Função para adicionar o produto ao carrinho
         function adicionarAoCarrinho() {
             let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
             const quantidade = parseInt(document.getElementById('quantidade').value);
@@ -115,14 +115,24 @@
             window.location.href = 'carrinho.html'; // Redireciona para a página do carrinho
         }
 
-        // Funções para o programa de afiliados
+        // Função para gerar o link de afiliado
         function gerarLinkAfiliado() {
-            const userId = Math.random().toString(36).substring(7); // Simula um ID único
-            const linkAfiliado = `https://seusite.com/produto?afiliado=${userId}`;
+            // Recupera o ID do produto (exemplo: do localStorage)
+            const produtoId = produto.id; // Supondo que o produto tenha um ID
+
+            // Gera um ID único para o afiliado (simulação)
+            const afiliadoId = Math.random().toString(36).substring(7); // Exemplo: "vd2ykb"
+
+            // Monta o link de afiliado com a URL atual e o ID do afiliado
+            const urlAtual = window.location.href.split('?')[0]; // Remove parâmetros existentes
+            const linkAfiliado = `${urlAtual}?afiliado=${afiliadoId}&produto=${produtoId}`;
+
+            // Exibe o link gerado
             document.getElementById('link-afiliado').textContent = linkAfiliado;
             document.getElementById('copiar-link').style.display = 'inline-block';
         }
 
+        // Função para copiar o link de afiliado
         function copiarLink() {
             const link = document.getElementById('link-afiliado').textContent;
             navigator.clipboard.writeText(link).then(() => {
@@ -130,6 +140,7 @@
             });
         }
 
+        // Funções para compartilhar o link nas redes sociais
         function compartilharFacebook() {
             const link = document.getElementById('link-afiliado').textContent;
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, '_blank');
