@@ -287,19 +287,22 @@ footer {
     }
 
     nav ul {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
     }
 
     nav ul li {
-        margin: 5px 0;
+        margin: 5px 10px;
     }
 
     nav ul li a {
-        font-size: 1em;
-        padding: 8px 15px;
+        font-size: 0.9em;
+        padding: 8px 12px;
         border-radius: 5px;
         background-color: rgba(255, 255, 255, 0.1);
-        transition: background-color 0.3s ease;
     }
 
     nav ul li a:hover {
@@ -308,54 +311,5 @@ footer {
 
     nav ul li a i {
         margin-right: 5px;
-    }
-
-    .produto-detalhes {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    .info-produto {
-        text-align: center;
-    }
-
-    .info-produto h3 {
-        font-size: 1.5em;
-    }
-
-    .preco {
-        font-size: 1.5em;
-    }
-
-    .descricao {
-        font-size: 1em;
-    }
-
-    .quantidade input {
-        width: 50px;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    footer {
-        padding: 15px;
-    }
-
-    .social-media a {
-        font-size: 1.2em;
-    }
-
-    #afiliados {
-        padding: 20px 10px;
-    }
-
-    .afiliados-info ol {
-        max-width: 90%;
-    }
-
-    .gerar-link button, .btn-copiar {
-        width: 100%;
     }
 }
