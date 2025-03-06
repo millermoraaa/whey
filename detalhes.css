@@ -1,4 +1,4 @@
-/* Estilos gerais (para desktop) */
+/* Estilos gerais */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -55,7 +55,7 @@ nav ul li a:hover {
     color: #f39c12;
 }
 
-/* Estilos para a seção de detalhes do produto (desktop) */
+/* Estilos para a seção de detalhes do produto */
 #detalhes-produto {
     padding: 40px 20px;
     text-align: center;
@@ -159,7 +159,7 @@ button:hover {
     background-color: #e67e22;
 }
 
-/* Estilos para o footer (desktop) */
+/* Estilos para o footer */
 footer {
     background-color: #2c3e50;
     color: #fff;
@@ -188,7 +188,7 @@ footer {
     color: #f39c12;
 }
 
-/* Estilos para a seção de afiliados (desktop) */
+/* Estilos para a seção de afiliados */
 #afiliados {
     padding: 40px 20px;
     background-color: #fff;
@@ -265,88 +265,97 @@ footer {
 /* ================================================== */
 @media (max-width: 768px) {
     body {
-        font-size: 14px; /* Tamanho de fonte menor para mobile */
+        font-size: 14px;
     }
 
     header {
-        flex-direction: column; /* Coluna para mobile */
+        flex-direction: column;
         text-align: center;
-        padding: 15px;
+        padding: 10px;
     }
 
     header .logo {
-        margin-bottom: 10px; /* Espaçamento entre logo e menu */
+        margin-bottom: 10px;
     }
 
     header .logo img {
-        height: 40px; /* Tamanho menor para mobile */
+        height: 40px;
     }
 
     header .logo h1 {
-        font-size: 1.5em; /* Tamanho menor para mobile */
+        font-size: 1.5em;
     }
 
     nav ul {
-        flex-direction: column; /* Menu em coluna para mobile */
+        flex-direction: column;
     }
 
     nav ul li {
-        margin: 5px 0; /* Espaçamento menor entre itens */
+        margin: 5px 0;
     }
 
     nav ul li a {
-        font-size: 1em; /* Tamanho menor para mobile */
+        font-size: 1em;
+        padding: 8px 15px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: background-color 0.3s ease;
     }
 
-    /* Ajustes na seção de detalhes do produto */
+    nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    nav ul li a i {
+        margin-right: 5px;
+    }
+
     .produto-detalhes {
-        flex-direction: column; /* Coluna para mobile */
+        flex-direction: column;
         padding: 15px;
     }
 
     .info-produto {
-        text-align: center; /* Centralizado para mobile */
+        text-align: center;
     }
 
     .info-produto h3 {
-        font-size: 1.5em; /* Tamanho menor para mobile */
+        font-size: 1.5em;
     }
 
     .preco {
-        font-size: 1.5em; /* Tamanho menor para mobile */
+        font-size: 1.5em;
     }
 
     .descricao {
-        font-size: 1em; /* Tamanho menor para mobile */
+        font-size: 1em;
     }
 
     .quantidade input {
-        width: 50px; /* Tamanho menor para mobile */
+        width: 50px;
     }
 
     button {
-        width: 100%; /* Botão ocupa toda a largura */
+        width: 100%;
     }
 
-    /* Ajustes no footer */
     footer {
         padding: 15px;
     }
 
     .social-media a {
-        font-size: 1.2em; /* Tamanho menor para mobile */
+        font-size: 1.2em;
     }
 
-    /* Ajustes na seção de afiliados */
     #afiliados {
-        padding: 20px 10px; /* Espaçamento menor para mobile */
+        padding: 20px 10px;
     }
 
     .afiliados-info ol {
-        max-width: 90%; /* Ocupa 90% da largura em mobile */
+        max-width: 90%;
     }
 
     .gerar-link button, .btn-copiar {
-        width: 100%; /* Botões ocupam toda a largura */
+        width: 100%;
     }
 }
