@@ -52,12 +52,12 @@
     <section id="afiliados">
         <h2>Programa de Afiliados</h2>
         <div class="afiliados-info">
-            <p>Ganhe <strong>50% de comissão</strong> por cada venda realizada através do seu link de afiliado!</p>
+            <p>Ganhe <strong>30% de comissão</strong> por cada venda realizada através do seu link de afiliado!</p>
             <p>Como funciona:</p>
             <ol>
                 <li>Clique no botão abaixo para gerar seu link de afiliado único.</li>
                 <li>Compartilhe o link com seus amigos, seguidores ou em suas redes sociais.</li>
-                <li>Quando alguém comprar o produto através do seu link, você receberá <strong>50% de comissão</strong>.</li>
+                <li>Quando alguém comprar o produto através do seu link, você receberá <strong>30% de comissão</strong>.</li>
                 <li>Após a compra, entre em contato conosco enviando o comprovante de pagamento para receber sua comissão.</li>
             </ol>
             <div class="gerar-link">
@@ -155,6 +155,33 @@
             const link = document.getElementById('link-afiliado').textContent;
             alert('Compartilhe o link diretamente no Instagram!');
         }
+
+        // Função para o zoom da imagem do produto
+        const imagemProduto = document.getElementById('produto-imagem');
+        const zoom = document.querySelector('.zoom');
+
+        imagemProduto.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = imagemProduto.getBoundingClientRect();
+            const x = e.clientX - left;
+            const y = e.clientY - top;
+
+            const zoomWidth = zoom.offsetWidth / 2;
+            const zoomHeight = zoom.offsetHeight / 2;
+
+            zoom.style.left = `${x - zoomWidth}px`;
+            zoom.style.top = `${y - zoomHeight}px`;
+
+            const bgPosX = (x / width) * 100;
+            const bgPosY = (y / height) * 100;
+
+            zoom.style.backgroundImage = `url('${imagemProduto.src}')`;
+            zoom.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
+            zoom.style.display = 'block';
+        });
+
+        imagemProduto.addEventListener('mouseleave', () => {
+            zoom.style.display = 'none';
+        });
     </script>
 </body>
 </html>
