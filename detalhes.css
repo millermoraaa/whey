@@ -1,4 +1,4 @@
-/* Estilos gerais */
+/* Estilos gerais (para desktop) */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -55,7 +55,7 @@ nav ul li a:hover {
     color: #f39c12;
 }
 
-/* Estilos para a seção de detalhes do produto */
+/* Estilos para a seção de detalhes do produto (desktop) */
 #detalhes-produto {
     padding: 40px 20px;
     text-align: center;
@@ -159,7 +159,7 @@ button:hover {
     background-color: #e67e22;
 }
 
-/* Estilos para o footer */
+/* Estilos para o footer (desktop) */
 footer {
     background-color: #2c3e50;
     color: #fff;
@@ -188,7 +188,7 @@ footer {
     color: #f39c12;
 }
 
-/* Estilos para a seção de afiliados */
+/* Estilos para a seção de afiliados (desktop) */
 #afiliados {
     padding: 40px 20px;
     background-color: #fff;
@@ -260,17 +260,93 @@ footer {
     color: #f39c12;
 }
 
-/* Responsividade */
+/* ================================================== */
+/* Estilos específicos para celular (max-width: 768px) */
+/* ================================================== */
 @media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Tamanho de fonte menor para mobile */
+    }
+
+    header {
+        flex-direction: column; /* Coluna para mobile */
+        text-align: center;
+        padding: 15px;
+    }
+
+    header .logo {
+        margin-bottom: 10px; /* Espaçamento entre logo e menu */
+    }
+
+    header .logo img {
+        height: 40px; /* Tamanho menor para mobile */
+    }
+
+    header .logo h1 {
+        font-size: 1.5em; /* Tamanho menor para mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Menu em coluna para mobile */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Espaçamento menor entre itens */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Tamanho menor para mobile */
+    }
+
+    /* Ajustes na seção de detalhes do produto */
     .produto-detalhes {
-        flex-direction: column;
+        flex-direction: column; /* Coluna para mobile */
+        padding: 15px;
     }
 
     .info-produto {
-        text-align: center;
+        text-align: center; /* Centralizado para mobile */
+    }
+
+    .info-produto h3 {
+        font-size: 1.5em; /* Tamanho menor para mobile */
+    }
+
+    .preco {
+        font-size: 1.5em; /* Tamanho menor para mobile */
+    }
+
+    .descricao {
+        font-size: 1em; /* Tamanho menor para mobile */
+    }
+
+    .quantidade input {
+        width: 50px; /* Tamanho menor para mobile */
+    }
+
+    button {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+
+    /* Ajustes no footer */
+    footer {
+        padding: 15px;
+    }
+
+    .social-media a {
+        font-size: 1.2em; /* Tamanho menor para mobile */
+    }
+
+    /* Ajustes na seção de afiliados */
+    #afiliados {
+        padding: 20px 10px; /* Espaçamento menor para mobile */
+    }
+
+    .afiliados-info ol {
+        max-width: 90%; /* Ocupa 90% da largura em mobile */
     }
 
     .gerar-link button, .btn-copiar {
-        width: 100%;
+        width: 100%; /* Botões ocupam toda a largura */
     }
 }
