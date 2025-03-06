@@ -48,6 +48,32 @@
         </div>
     </section>
 
+    <!-- Seção do Programa de Afiliados -->
+    <section id="afiliados">
+        <h2>Programa de Afiliados</h2>
+        <div class="afiliados-info">
+            <p>Ganhe <strong>50% de comissão</strong> por cada venda realizada através do seu link de afiliado!</p>
+            <p>Como funciona:</p>
+            <ol>
+                <li>Clique no botão abaixo para gerar seu link de afiliado único.</li>
+                <li>Compartilhe o link com seus amigos, seguidores ou em suas redes sociais.</li>
+                <li>Quando alguém comprar o produto através do seu link, você receberá <strong>50% de comissão</strong>.</li>
+                <li>Após a compra, entre em contato conosco enviando o comprovante de pagamento para receber sua comissão.</li>
+            </ol>
+            <div class="gerar-link">
+                <button onclick="gerarLinkAfiliado()"><i class="fas fa-link"></i> Gerar Link de Afiliado</button>
+                <p id="link-afiliado" class="link-gerado"></p>
+                <button onclick="copiarLink()" id="copiar-link" class="btn-copiar"><i class="fas fa-copy"></i> Copiar Link</button>
+            </div>
+            <div class="compartilhar-redes">
+                <p>Compartilhe seu link:</p>
+                <a href="#" onclick="compartilharFacebook()"><i class="fab fa-facebook"></i></a>
+                <a href="#" onclick="compartilharWhatsApp()"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" onclick="compartilharInstagram()"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
     <footer id="contato">
         <div class="footer-content">
             <p>&copy; 2023 WheyPro. Todos os direitos reservados.</p>
@@ -87,6 +113,36 @@
             // Atualiza o carrinho no localStorage
             localStorage.setItem('carrinho', JSON.stringify(carrinho));
             window.location.href = 'carrinho.html'; // Redireciona para a página do carrinho
+        }
+
+        // Funções para o programa de afiliados
+        function gerarLinkAfiliado() {
+            const userId = Math.random().toString(36).substring(7); // Simula um ID único
+            const linkAfiliado = `https://seusite.com/produto?afiliado=${userId}`;
+            document.getElementById('link-afiliado').textContent = linkAfiliado;
+            document.getElementById('copiar-link').style.display = 'inline-block';
+        }
+
+        function copiarLink() {
+            const link = document.getElementById('link-afiliado').textContent;
+            navigator.clipboard.writeText(link).then(() => {
+                alert('Link copiado para a área de transferência!');
+            });
+        }
+
+        function compartilharFacebook() {
+            const link = document.getElementById('link-afiliado').textContent;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, '_blank');
+        }
+
+        function compartilharWhatsApp() {
+            const link = document.getElementById('link-afiliado').textContent;
+            window.open(`https://wa.me/?text=${encodeURIComponent(`Confira este produto: ${link}`)}`, '_blank');
+        }
+
+        function compartilharInstagram() {
+            const link = document.getElementById('link-afiliado').textContent;
+            alert('Compartilhe o link diretamente no Instagram!');
         }
     </script>
 </body>
